@@ -32,7 +32,7 @@ window.renderStatistics = function (ctx, names, times) {
     var proportion = maxTime / BAR_HEIGHT;
 
     ctx.fillText(names[i], CLOUD_X + GAP * 2 + TEXT_X_GAP * i, GAP * 2 + TEXT_Y_GAP);
-    ctx.fillStyle = 'rgb(255, 0,' + Math.random() * 255 + ')';
+    ctx.fillStyle = 'rgba(255, ' + Math.random() * 255 + ', 100)';
 
     ctx.fillRect(CLOUD_X + GAP * 2 + TEXT_X_GAP * i, BAR_Y - FONT_GAP + BAR_X, BAR_WIDTH, -(times[i] / proportion));
     ctx.font = '16px PT Mono';
