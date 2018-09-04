@@ -25,12 +25,13 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Ура, вы победили!', CLOUD_X + GAP, CLOUD_Y + GAP * 2);
   ctx.fillText('Список результатов:', CLOUD_X + GAP, CLOUD_Y + GAP * 4);
 
+  var maxTime = Math.max.apply({}, times);
+  var proportion = maxTime / BAR_HEIGHT;
+
   for (var i = 0; i < names.length; i++) {
-    var maxTime = Math.max.apply({}, times);
-    var proportion = maxTime / BAR_HEIGHT;
     ctx.fillText(names[i], CLOUD_X + GAP * 2 + TEXT_X_GAP * i, GAP * 2 + TEXT_Y_GAP);
     ctx.fillText(Math.round(times[i]), CLOUD_X + GAP * 2 + TEXT_X_GAP * i, TEXT_Y_GAP - FONT_GAP - (times[i] / proportion));
-    ctx.fillStyle = 'rgb(255, ' + Math.random() * 255 + ', 100)';
+    ctx.fillStyle = (names[i] === 'Вы') ? 'rgb(255, 0, 0, 1)' : 'rgb(0, 0,' + Math.random() * 255 + ')';
     ctx.fillRect(CLOUD_X + GAP * 2 + TEXT_X_GAP * i, TEXT_Y_GAP, BAR_WIDTH, -(times[i] / proportion));
     ctx.font = '16px PT Mono';
     ctx.fillStyle = '#000';
