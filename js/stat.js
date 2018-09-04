@@ -37,7 +37,7 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillRect(CLOUD_X + GAP * 2 + TEXT_X_GAP * i, BAR_Y - FONT_GAP + BAR_X, BAR_WIDTH, -(times[i] / proportion));
     ctx.font = '16px PT Mono';
     ctx.fillStyle = '#000';
-    ctx.fillText(Math.round(times[i]), CLOUD_X + GAP * 2 + TEXT_X_GAP * i, BAR_Y - FONT_GAP);
+    ctx.fillText(Math.round(times[i]), CLOUD_X + GAP * 2 + TEXT_X_GAP * i, BAR_Y - FONT_GAP + BAR_HEIGHT - (times[i] / proportion));
   }
 
 };
