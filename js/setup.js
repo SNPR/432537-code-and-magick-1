@@ -41,7 +41,6 @@ var EYE_COLORS = [
 
 
 var userDialog = document.querySelector('.setup');
-userDialog.classList.remove('hidden');
 
 var shuffleArray = function (arr) {
   var arrCopy = arr.slice();
@@ -93,5 +92,3 @@ for (var i = 0; i < wizards.length; i++) {
 }
 
 similarListElement.appendChild(fragment);
-
-document.querySelector('.setup-similar').classList.remove('hidden');
