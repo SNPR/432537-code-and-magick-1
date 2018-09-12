@@ -46,11 +46,10 @@ userDialog.classList.remove('hidden');
 var shuffleArray = function (arr) {
   var arrCopy = arr.slice();
   var result = [];
-  for (var i = 0; i < arrCopy.length; i++) {
+  while (arrCopy.length) {
     var randomArrayIndex = Math.floor(Math.random() * arrCopy.length);
     result.push(arrCopy[randomArrayIndex]);
     arrCopy.splice(randomArrayIndex, 1);
-    i--;
   }
   return result;
 };
